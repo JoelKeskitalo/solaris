@@ -1,0 +1,175 @@
+body {
+    height: 100vh; 
+    margin: 0;
+    background: linear-gradient(to left, #000000, #0A0A23); 
+    color: white; 
+    font-family: Arial, sans-serif; 
+    font-family: 'Orbitron', sans-serif;
+    padding-right: 2rem;
+    overflow: hidden
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 1.5rem;
+    margin-right: 3rem;
+}
+
+h1 {
+    font-size: 3rem; 
+    margin: 2rem 0 1rem 0; 
+}
+  
+h2 {
+    font-size: 1.5em; 
+    color: rgb(245, 174, 60);
+    margin: 0;
+    letter-spacing: 1rem;
+}
+
+
+main {
+    height: calc(100vh - 60px);
+  }
+  
+
+
+#solar-system {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: -15vh;
+}
+  
+#solar-system > div {
+    border-radius: 50%; 
+    margin: 0 10px; 
+}
+
+
+#sun {
+    width: 25vh;
+    height: 80vh;
+    background-color: rgb(255, 187, 0);
+    clip-path: ellipse(100% 100% at 100% 50%);
+}
+  
+  
+
+#mercury {
+    width: 8px;
+    height: 8px;
+    background-color: grey;
+  }
+  
+#venus {
+    width: 20px;
+    height: 20px;
+    background-color: orange;
+  }
+  
+#earth {
+    width: 21px;
+    height: 21px;
+    background-color: blue;
+  }
+  
+#mars {
+    width: 11px;
+    height: 11px;
+    background-color: red;
+  }
+  
+#jupiter {
+    width: 69px;
+    height: 69px;
+    background-color: sandybrown;
+  }
+  
+  #saturn {
+    width: 58px;
+    height: 58px;
+    background-color: khaki;
+    position: relative; /* För att positionera pseudoelementet korrekt */
+    border-radius: 50%; /* Gör Saturn rund */
+}
+
+#saturn::before {
+    content: ''; /* Nödvändigt för att visa pseudoelementet */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px; /* Öka bredden på ringen */
+    height: 10px; /* Minska höjden på ringen */
+    background: rgba(255,255,255,0.5); /* Färg på ringen */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(15deg); /* Roterar ringen */
+    z-index: -1; /* Placera ringen bakom Saturn */
+}
+
+#uranus {
+    width: 25px;
+    height: 25px;
+    background-color: lightblue;
+  }
+  
+#neptune {
+    width: 24px;
+    height: 24px;
+    background-color: darkblue;
+  }
+  
+
+  .planet-info {
+    display: none; /* Dölj från början */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0); 
+    color: white; 
+}
+
+
+
+/* Stil för stäng-knappen */
+#close-info {
+  padding: 10px 20px;
+  background-color: #f44336; /* Röd färg, ändra efter behov */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.planet-title {
+  color: white;
+  font-size: 3rem;
+}
+
+.planet-subtitle {
+  color: yellow;
+  letter-spacing: 0.5rem;
+}
+
+
+.star {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px white;
+}
+
+#sun.sun-glow {
+  box-shadow: 0 0 30px 10px yellow;
+}
